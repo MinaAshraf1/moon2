@@ -1,0 +1,213 @@
+:root {
+    --moon-color: #999;
+    --moon: #555;
+    background-color: #11115f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 100px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    perspective: 600px;
+}
+
+.container .moon .body {
+    width: 250px;
+    height: 250px;
+    margin: 50px;
+    padding: 20px;
+    background-color: var(--moon-color);
+    border-radius: 50%;
+    position: relative;
+    transform: scale3d(1.2, 1.2, 1.2);
+    animation-name: body;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes body {
+    to {
+        transform: scale3d(1.2, 1.2, 1.2) rotate(15deg);
+    }
+}
+
+.container .moon .body .brow {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    position: absolute;
+    top: 50px;
+}
+
+.container .moon .body .brow .brow-l,
+.container .moon .body .brow .brow-r {
+    width: 50px;
+    height: 50px;
+    background-color: var(--moon);
+    border-radius: 50%;
+    position: relative;
+}
+
+.container .moon .body .brow .brow-l::before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: var(--moon-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    left: 1px;
+}
+
+.container .moon .body .brow .brow-r::before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background-color: var(--moon-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 8px;
+    right: 1px;
+}
+
+.container .moon .body .eye {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    margin: 5px auto;
+    position: absolute;
+    top: 70px
+}
+
+.container .moon .body .eye .eye-l,
+.container .moon .body .eye .eye-r {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    position: relative;
+}
+
+.container .moon .body .eye .eye-r::before,
+.container .moon .body .eye .eye-l::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -10px;
+    margin-left: -10px;
+    animation-name: eye-before;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes eye-before {
+    0% {
+        position: absolute;
+        top: 50%;
+        left: 0%;
+        margin-top: -10px;
+        margin-left: -0px;
+    }
+    50% {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -10px;
+        margin-left: -10px;
+    }
+    100% {
+        position: absolute;
+        top: 50%;
+        left: 100%;
+        margin-top: -10px;
+        margin-left: -20px;
+    }
+}
+
+.container .moon .body .down {
+    width: 80%;
+    position: absolute;
+    top: 120px;
+}
+
+.container .moon .body .down .nose {
+    margin: 2px auto;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--moon);
+    position: relative;
+}
+
+.container .moon .body .down .nose::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--moon-color);
+    position: absolute;
+    bottom: 7px;
+}
+
+.container .moon .body .down .mouse {
+    margin: 10px auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+}
+
+.container .moon .body .down .mouse::before {
+    content: "";
+    width: 50px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: var(--moon-color);
+    position: absolute;
+    bottom: 50%;
+}
+
+.container .moon .body .down .teeth {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+}
+
+.container .moon .body .down .teeth1,
+.container .moon .body .down .teeth2 {
+    width: 10px;
+    height: 10px;
+    border-radius: 30%;
+    background-color: white;
+    margin: 0px 1px;
+}
+
+.container .moon .body .down .tongue {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: red;
+    position: absolute;
+    top: 75%;
+    left: 15px;
+}
