@@ -211,3 +211,21 @@
     top: 75%;
     left: 15px;
 }
+
+.container h1 {
+    width: fit-content;
+    margin: 10px auto;
+    color: white;
+    font-weight: 600;
+    font-family: sans-serif;
+    animation-name: name;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+@keyframes name {
+    to {
+        font-style: italic;
+    }
+}
